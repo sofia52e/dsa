@@ -1,32 +1,44 @@
-[tool.poetry]
-name = "bmstu_algorithms"
-version = "2024.09"
+[project]
+name = "dsa"
+version = "2025.09"
 description = "Алгоритмы и структуры данных"
-authors = ["askras <askrasnikov@gmail.com>"]
-license = "CC BY 4.0"
+authors = [
+    {name = "askras",email = "askrasnikov@gmail.com"}
+]
+license = {text = "CC BY 4.0"}
 readme = "README.md"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "jsonschema (>=4.25.1,<5.0.0)",
+    "jupyterlab (>=4.4.6,<5.0.0)",
+    "jupyterlab-rise (>=0.43.1,<0.44.0)",
+    "jupytext (>=1.17.3,<2.0.0)",
+    "matplotlib (>=3.10.5,<4.0.0)",
+    "nb-js-diagrammers (>=0.0.9,<0.0.10)",
+    "notebook (>=7.4.5,<8.0.0)",
+    "sympy (>=1.14.0,<2.0.0)",
+]
 
-[tool.poetry.dependencies]
-python = "^3.12"
-jupyterlab = "^4.2.5"
-notebook = "^7.2.2"
-jupytext = "^1.16.4"
-jupyterlab-rise = "^0.42.0"
-matplotlib = "^3.9.2"
-jsonschema = "^4.23.0"
-nb-js-diagrammers = "^0.0.9"
-sympy = "^1.13.3"
-
-[tool.poetry.group.dev.dependencies]
-poetry-exec-plugin = "^0.3.6"
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 
-[tool.poetry-exec-plugin.commands]
+[tool.poetry]
+package-mode = false
 
+
+[tool.poetry.group.dev.dependencies]
+poetry-exec-plugin = "^1.0.1"
+poetry-plugin-export = "^1.9.0,<2.0.0"
+
+
+[tool.jupytext]
+formats = "ipynb,md"
+
+
+[tool.poetry-exec-plugin.commands]
 spyder = """
 spyder --workdir=./ --window-title bmstu_machinelearning --project ./ --conf-dir ./.config/spyder-py3
 """
@@ -38,12 +50,3 @@ export JUPYTERLAB_SETTINGS_DIR=./.jupyterlab_config/user-settings
 export JUPYTERLAB_WORKSPACES_DIR=./.jupyterlab_config/workspaces
 python -m jupyter lab --allow-root --NotebookApp.token='' --NotebookApp.password=''
 """
-
-
-#======================================================================================================================
-# Jupytext: Jupyter notebooks as Markdown documents, Julia, Python or R scripts
-# https://github.com/mwouts/jupytext
-#======================================================================================================================
-[tool.jupytext]
-#notebook_extensions = "md"
-formats = "ipynb,md"
