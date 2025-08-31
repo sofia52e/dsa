@@ -1,15 +1,16 @@
 ---
-jupytext:
-  formats: ipynb,md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.17.3
-kernelspec:
-  display_name: Python 3 (ipykernel)
-  language: python
-  name: python3
+jupyter:
+  jupytext:
+    formats: ipynb,md
+    text_representation:
+      extension: .md
+      format_name: markdown
+      format_version: '1.3'
+      jupytext_version: 1.17.3
+  kernelspec:
+    display_name: Python 3 (ipykernel)
+    language: python
+    name: python3
 ---
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
@@ -21,7 +22,7 @@ kernelspec:
 
 Красников Александр Сергеевич
 
-2024
+2024-2025
 <!-- #endregion -->
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
